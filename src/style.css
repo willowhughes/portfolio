@@ -13,6 +13,10 @@ body {
   line-height: 1.6;
 }
 
+p {
+  margin: 0.5rem 0;
+}
+
 a {
   color: rgba(237, 250, 250, 0.925);
 }

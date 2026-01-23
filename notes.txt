@@ -1,0 +1,234 @@
+HTML Ultra-Compact Documentation
+Core Concept
+HTML = nested tags that describe content structure. Browser turns it into visual elements.
+Basic Structure
+html<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Title</title>
+  </head>
+  <body>
+    <!-- Your content here -->
+  </body>
+</html>
+Essential Tags
+Structure:
+
+<div> - generic container (block)
+<span> - generic container (inline)
+<header>, <nav>, <main>, <footer>, <section>, <article> - semantic divs
+
+Text:
+
+<h1> to <h6> - headings (h1 biggest)
+<p> - paragraph
+<a href="url"> - link
+<strong> - bold, <em> - italic
+
+Lists:
+
+<ul> - unordered, <ol> - ordered, <li> - list item
+
+Media:
+
+<img src="path" alt="description" /> - image
+<video>, <audio> - media
+
+Forms:
+
+<form> - form container
+<input type="text|email|password|checkbox" /> - input field
+<textarea> - multi-line text
+<button> - button
+<label> - labels for inputs
+
+Attributes (go inside opening tags)
+
+id="unique-name" - unique identifier
+class="name1 name2" - CSS classes (can reuse)
+href="url" - link destination
+src="path" - source for images/scripts
+type="text" - specify input type
+placeholder="hint" - input hint text
+
+Key Rules
+
+Tags nest: <div><p>text</p></div> ✅
+Self-closing tags: <img /> <input /> <br />
+Block vs inline: divs stack vertically, spans flow horizontally
+Semantic matters: use <nav> not <div class="nav"> - helps accessibility/SEO
+
+---------------------------------------------------------------------------
+
+CSS Ultra-Compact Documentation
+Core Concept
+CSS = rules that select HTML elements and style them. Format: selector { property: value; }
+Three Ways to Add CSS
+html<!-- 1. External (best) -->
+<link rel="stylesheet" href="style.css" />
+
+<!-- 2. Internal -->
+<style>
+  p { color: blue; }
+</style>
+
+<!-- 3. Inline (avoid) -->
+<p style="color: blue;">Text</p>
+Selectors (How to target elements)
+css/* Tag */
+p { }
+
+/* Class (reusable) */
+.card { }
+
+/* ID (unique) */
+#header { }
+
+/* Descendant */
+nav a { }  /* links inside nav */
+
+/* Direct child */
+nav > a { }
+
+/* Multiple */
+h1, h2, h3 { }
+
+/* Pseudo-classes */
+a:hover { }
+button:active { }
+input:focus { }
+Essential Properties
+Text:
+csscolor: #333;
+font-size: 16px;
+font-weight: bold;
+font-family: Arial, sans-serif;
+text-align: center;
+line-height: 1.6;
+Box Model (every element is a box):
+css/* From outside in: margin → border → padding → content */
+margin: 20px;          /* space outside */
+padding: 20px;         /* space inside */
+border: 1px solid #ccc;
+width: 300px;
+height: 200px;
+Spacing shortcuts:
+cssmargin: 10px;              /* all sides */
+margin: 10px 20px;         /* top/bottom left/right */
+margin: 10px 20px 30px 40px;  /* top right bottom left */
+Layout:
+cssdisplay: block;    /* stacks vertically (default for div) */
+display: inline;   /* flows horizontally (default for span) */
+display: none;     /* hide element */
+
+/* Flexbox (modern layout) */
+display: flex;
+justify-content: center;  /* horizontal alignment */
+align-items: center;      /* vertical alignment */
+gap: 20px;               /* space between items */
+flex-direction: column;  /* stack vertically */
+Position:
+cssposition: relative;  /* stays in flow, can nudge with top/left */
+position: absolute;  /* removed from flow, positioned relative to parent */
+position: fixed;     /* fixed to viewport (sticky nav) */
+position: sticky;    /* hybrid of relative/fixed */
+Colors:
+csscolor: red;
+color: #ff0000;
+color: rgb(255, 0, 0);
+color: rgba(255, 0, 0, 0.5);  /* with transparency */
+Background:
+cssbackground-color: #f5f5f5;
+background-image: url('image.jpg');
+background-size: cover;
+Other:
+cssborder-radius: 8px;    /* rounded corners */
+box-shadow: 0 2px 4px rgba(0,0,0,0.1);  /* drop shadow */
+opacity: 0.8;          /* transparency */
+cursor: pointer;       /* change cursor */
+Responsive Design
+css/* Mobile first approach */
+.card {
+  width: 100%;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .card {
+    width: 50%;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .card {
+    width: 33%;
+  }
+}
+```
+
+## Box Model Visual
+```
+┌─────────────────────────────────┐
+│        margin (transparent)      │
+│  ┌───────────────────────────┐  │
+│  │  border                    │  │
+│  │  ┌─────────────────────┐  │  │
+│  │  │  padding            │  │  │
+│  │  │  ┌───────────────┐  │  │  │
+│  │  │  │   content     │  │  │  │
+│  │  │  └───────────────┘  │  │  │
+│  │  └─────────────────────┘  │  │
+│  └───────────────────────────┘  │
+└─────────────────────────────────┘
+Starter Portfolio CSS
+css* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  /* includes padding/border in width */
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: #f8f9fa;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;  /* removes bullets */
+}
+
+nav a {
+  text-decoration: none;  /* removes underline */
+  color: #333;
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+Key Concepts
+
+Specificity: More specific selectors win. #id beats .class beats tag
+Cascade: Later rules override earlier ones
+Inheritance: Some properties (like color) pass to children
+Box-sizing: border-box - makes width calculations easier

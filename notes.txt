@@ -1,3 +1,15 @@
+project format:
+
+name
+brief desc
+
+photos
+
+details + why
+
+whats being worked on right now
+
+
 HTML Ultra-Compact Documentation
 Core Concept
 HTML = nested tags that describe content structure. Browser turns it into visual elements.

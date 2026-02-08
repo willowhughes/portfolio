@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
-* {
-  box-sizing: border-box;
+.link {
+  @apply text-[rgba(241,241,241,0.9)] underline underline-offset-3 decoration-white/50 hover:opacity-80 transition-opacity;
+}
+
+.body-base {
+  @apply m-0 p-0 mt-24 text-lg bg-[rgb(26,26,27)] text-[rgba(241,241,241,0.9)] leading-relaxed font-['Times_New_Roman',_Times,_serif];
+}
+
+.section-container {
+  @apply w-full max-w-3xl mx-auto px-4 py-8 md:px-8 flex flex-col items-start text-left;
+}
+
+.page-title {
+  @apply m-0 text-2xl font-bold;
 }

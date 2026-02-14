@@ -23,4 +23,12 @@ dist-ssr
 *.sln
 *.sw?
 
-# learning
+# env
+.env
+
+# terraform
+.*.tfstate
+.terraform/
+*.tfstate.backup
+terraform.tfvars
+*.terraform.lock.hcl
